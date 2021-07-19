@@ -12,27 +12,43 @@
     <body class="b-black-theme">
 
         <div id="container">
-            <div id="base" class="black-theme s-black-theme">
-                
-               <div id="local-visor">
-                    <div id="local-visor-review">
-                        <span id="span-left"></span>
-                        <span id="span-comando"></span>
+            <div id="local-calculadora">
+                <span id="btn_minify">
+                    +
+                </span>
+                <div id="base" class="black-theme s-black-theme">
+                    <div id="local-visor">
+                         <div id="local-visor-review">
+                             <span id="span-left"></span>
+                             <span id="span-comando"></span>
+                         </div>
+                        <input type="text" id="visor" onkeypress="CalculadoraFunctions.onlynumber();" class="black-theme">
                     </div>
-
-                   <input type="text" id="visor" onkeypress="Calculadora.onlynumber();" class="black-theme">
-               </div>
-
-               <!-- LOCAL AONDE SE CRIA A CALCULADORA  -->
-               <div id="local-buttons" class="grid-container">
-               </div>
+                    <!-- LOCAL AONDE SE CRIA A CALCULADORA  -->
+                    <div id="local-buttons" class="grid-container">
+                    </div>
+                </div>
             </div>
         </div>
 
         <script src="scripts/CreateCalculadora.js"></script>
         <script src="scripts/main.js"></script>
 
-       
+       <script>
+        /// troca a classe de um elemento
+        window.onload = function() {
+            let evento_btn = function(){
+                const BUTAO_MINIFY = document.getElementById("btn_minify")
+                const BASE = document.getElementById("base")
+
+                /// Adiciona o evento que faz o toggle das classes para minificar a calculadora
+                BUTAO_MINIFY.addEventListener("click", function(){
+                    BASE.classList.toggle("aberta")
+                    console.log("trocando a classe")
+                }, false)
+           }();
+        };
+       </script>
 
     </body>
 </html>

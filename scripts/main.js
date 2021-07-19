@@ -1,6 +1,5 @@
 class CalculadoraFunctions extends DOOMCalculadora
 {
-
     HISTORICO = {}
 
     LEFT = ""
@@ -42,6 +41,7 @@ class CalculadoraFunctions extends DOOMCalculadora
     }
     
     constructor(){
+        /// chama o construtor da classe extendida
         super()
     }
 
@@ -59,50 +59,39 @@ class CalculadoraFunctions extends DOOMCalculadora
     }
 
     /// função que media os calculos e entrega o resulta pro usuario
-    static doTheCalculos()
-    {
+    static doTheCalculos() {
         let result = ""
-
-        if (projeto.VISOR.value != "")
-        {
-            if ( projeto.COMANDO != "%" )
-            {
+        if (projeto.VISOR.value != "") {
+            if ( projeto.COMANDO != "%" ) {
                 /// faz o calculo
                 result = eval(projeto.LEFT+projeto.COMANDO+projeto.RIGHT)
             }
-            else
-            {
+            else {
                 /// faz o calculo de porcentagem
                 result = (projeto.RIGHT * projeto.LEFT) / 100
             }
-
             /// zera os campos
             CalculadoraFunctions.zeraTudo()
-
             /// seta o valor do resultado no visor
             projeto.VISOR.value = result
         }
     }
 
 
-    eventsConnect()
-    {
+    eventsConnect(){
         /// Adiciona o evento de click para arrumar um erro do visor
         projeto.VISOR.addEventListener("click", CalculadoraFunctions.moveCursorAtFinal, false)
 
         /// adiciona os eventos de click aos butões designando suas funções
-        for ( let i = 0; i < projeto.BUTAO.length; i++ )
-        {   
+        for ( let i = 0; i < projeto.BUTAO.length; i++ ){   
             let atualButton = projeto.BUTAO[i]
             let atualButtonChild = projeto.BUTAO[i].childNodes[0]
 
-            if ( atualButton.classList.contains("t-number"))
-            {
+            if ( atualButton.classList.contains("t-number")) {
                 atualButtonChild.addEventListener("click", CalculadoraFunctions.adicionarValorAtInput, false)
             }
 
-            if ( atualButton.classList.contains("t-signal"))
-            {
+            if ( atualButton.classList.contains("t-signal")) {
                 atualButtonChild.addEventListener("click", CalculadoraFunctions.realizarCalculo, false)
                 atualButtonChild.addEventListener("click", CalculadoraFunctions.atualizarCampos, false)
             }
@@ -110,58 +99,47 @@ class CalculadoraFunctions extends DOOMCalculadora
     }
 
 
-
-
     /// ---------------- FERRAMENTAS ------------------- \\\
 
     /// antes de realizar o calculo, seta a variavel no RIGHT
-    static atualizarRight()
-    {
+    static atualizarRight(){
         projeto.RIGHT = projeto.VISOR.value
     }
 
     /// atualiza os campos para a visualização das operações
-    static atualizarCampos()
-    {
+    static atualizarCampos(){
         CalculadoraFunctions.changeInnerHtml(projeto.SPAN_LEFT, projeto.LEFT)
         CalculadoraFunctions.changeInnerHtml(projeto.SPAN_COMANDO, projeto.COMANDO)
     }
 
     /// muda os campos para a visualização das operações
-    static changeInnerHtml(htmlObject, string)
-    {
+    static changeInnerHtml(htmlObject, string){
         htmlObject.innerHTML = string
     }
 
     /// remove ultimo caracter
-    static removeUltimoCaracter()
-    {
+    static removeUltimoCaracter(){
         projeto.VISOR.focus()
         projeto.VISOR.value = projeto.VISOR.value.slice(0, -1);
     }
 
     /// zera todos os campos da calculadora
-    static zeraTudo()
-    {
+    static zeraTudo(){
         projeto.VISOR.value = ""
         projeto.COMANDO = ""
         projeto.LEFT = ""
         projeto.RIGHT = ""
     }
 
-    static setaLeft()
-    {
-        if ( CalculadoraFunctions.leftIsEmpty())
-        {
+    static setaLeft(){
+        if ( CalculadoraFunctions.leftIsEmpty()){
             projeto.LEFT = projeto.VISOR.value
             console.log("-------- SETANDO LEFT -------")
         }
     }
 
-    static verificaAndSetComando(comando)
-    {
-        if ( CalculadoraFunctions.leftIsEmpty())
-        {
+    static verificaAndSetComando(comando){
+        if ( CalculadoraFunctions.leftIsEmpty()){
             CalculadoraFunctions.setaLeft()
             CalculadoraFunctions.limpaVisor()
         }
@@ -171,8 +149,7 @@ class CalculadoraFunctions extends DOOMCalculadora
     }
 
     /// Limpa o visor
-    static limpaVisor()
-    {
+    static limpaVisor(){
         projeto.VISOR.value = ""
         console.log("------- LIMPANDO VISOR -------")
     }
@@ -216,27 +193,22 @@ class CalculadoraFunctions extends DOOMCalculadora
     /// verifica se o caracter é igual ao valor passado, se sim realiza umas condições
     /// utilizado a verificação com o "." para evitar ter mais de um na string
     static verificaEAdiciona(value, str){
-        if ( value == str )
-        {
+        if ( value == str ){
             if ( projeto.VISOR.value != 0 ){
-                if ( projeto.VISOR.value.indexOf(str) == -1 )
-                {
+                if ( projeto.VISOR.value.indexOf(str) == -1 ){
                     projeto.VISOR.value += value
                 }
             }
         }
-        else
-        {
+        else{
             projeto.VISOR.value += value
         }
     }
 
     /// Move o cursor para o ultimo caracter
-    static moveCursorAtFinal()
-    {
+    static moveCursorAtFinal(){
         /// logo depois de 10ms após se clicar no input, ele move cursor
-        setTimeout(function() 
-        {
+        setTimeout(function() {
             let pos = projeto.VISOR.value.length * 2;
             projeto.VISOR.focus();
             projeto.VISOR.setSelectionRange(pos, pos);
@@ -245,5 +217,4 @@ class CalculadoraFunctions extends DOOMCalculadora
 }
 
 let projeto = new CalculadoraFunctions();
-
-setTimeout(projeto.eventsConnect(), 2000);
+setTimeout(projeto.eventsConnect(), 20);
