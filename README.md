@@ -1,6 +1,6 @@
 <h1> HTML-JS-vanilla-Simples-Calculadora </h1>
 
-<h2> Uma simples calculadora feita em HTML + JS Vanilla + CSS, apenas como demonstração para o meu portfólio de JS simples <h2>
+<h4> Uma simples calculadora feita em HTML + JS Vanilla + CSS, apenas como demonstração para o meu portfólio de JS simples <h4>
 
 <h1 align="center">
   <img alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image1" />
