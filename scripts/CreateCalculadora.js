@@ -114,10 +114,10 @@ class DOOMCalculadora
         for (let buttonValue in this.DOOM_BUTTONS )
         {
             let button = this.DOOM_BUTTONS[buttonValue]
-            let resultInneer = ""
+            let resultInneer = ``
 
             resultInneer = button.ocupa2 ?  "<div class='ocupa2" : "<div class='"
-            resultInneer += " grid-item button "+button.type+"'><input class='btn btn-style' type='button' value='"+button.value+"'></div>"
+            resultInneer += ` grid-item button ${button.type}'><input class='btn btn-style' type='button' value='${button.value}'></div>`
 
             this.addToDoom(resultInneer)
         }
