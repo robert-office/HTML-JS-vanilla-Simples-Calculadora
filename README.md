@@ -2,12 +2,16 @@
 
 <h4> Uma simples calculadora feita em HTML + JS Vanilla + CSS, apenas como demonstração para o meu portfólio de JS simples <h4>
 
+<br>
+	
 <h1 align="center">
-  <img alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image1" />
+  <img style="width: 100px; height: 100px" alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image1.png" />
 </h1>
 
+<br>
+
 <h1 align="center">
-  <img alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image2" />
+  <img style="width: 100px; height: 100px" alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image2.png" />
 </h1>
 
 
