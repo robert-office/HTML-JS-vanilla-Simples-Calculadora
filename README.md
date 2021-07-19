@@ -22,5 +22,5 @@
 
 - [x] Calculos funcionais
 - [x] Calculo de porcentagens
-- [ ] Modo troca de temas
-- [ ] Modo de minificação
+- [] Modo troca de temas
+- [x] Modo de minificação
