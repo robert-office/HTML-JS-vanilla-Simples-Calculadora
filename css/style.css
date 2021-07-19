@@ -1,0 +1,181 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-white-color: #ededed;
+    --main-black-color: #151516;
+    --base-black-color: #2a2044;
+    --button-black-color: #964ec2;
+    --shadow-black: #430568;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* TEMAS PARA BACKGROUND */
+.b-black-theme
+{
+    background-color: var(--main-black-color);
+}
+
+.b-white-theme
+{
+    background-color: var(--main-white-color);
+}
+
+/* SOMBRAS */
+.s-white-theme
+{
+    -webkit-box-shadow: 1px 2px 15px 5px var(--main-black-color); 
+    box-shadow: 1px 2px 15px 5px var(--main-black-color);
+}
+
+.s-black-theme
+{
+    -webkit-box-shadow: 1px 2px 15px 5px var(--shadow-black); 
+    box-shadow: 1px 2px 15px 5px var(--shadow-black);
+}
+
+/* BASE DA CALCULADORA */
+#container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#base {
+    overflow: hidden;
+    position: absolute;
+    height: 410px;
+    width: 300px;
+    border-radius: 30px;     
+}
+
+.black-theme{
+    background-color: var(--base-black-color);
+}
+
+#base .b-white-theme {
+    background-color: var(--main-white-color);
+}
+
+/* VISOR */
+#local-visor {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+
+#visor {
+    text-align: right;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    font-size: 20px;
+    
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 0px 0px 0px 0px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid #DDDDDD;
+}
+
+#visor:focus {
+    box-shadow: 0 0 5px rgba(219, 61, 55, 0.767);
+    padding: 0px 20px 0px 20px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(219, 61, 55, 0.767);
+}
+
+
+/* LOCAL REVIEW DAS OPERAÇÕES */
+#local-visor-review {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: var(--base-black-color);
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 5px 10px;
+    z-index: 100;
+}
+
+#local-visor-review span {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#span-comando {
+    color: brown;
+}
+
+
+/* BUTTONS */ 
+#local-buttons {
+    position: relative;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-column-gap: 5px;
+    grid-row-gap: 10px;
+}
+
+.ocupa2 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.button {
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.button input[type=button]
+{
+    background-color: transparent;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid var(--main-black-color);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #fff;
+    outline: 0;
+}
+  
+.btn-style {
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn-style:hover, input[type=button]:hover{
+  border: 1px solid beige;
+  -webkit-box-shadow: 1px 2px 15px 5px var(--shadow-black); 
+  box-shadow: 1px 2px 15px 5px var(--shadow-black);
+}
