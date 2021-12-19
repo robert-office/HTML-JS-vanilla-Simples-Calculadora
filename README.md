@@ -1,10 +1,10 @@
 <h1> HTML-JS-vanilla-Simples-Calculadora </h1>
 
 <div>
-	<figure style="width: 100px; height: 100px; float: left;">
+	<figure style="width: 100px; min-height: 100px; float: left;">
 		<img alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image1.png" />
 	</figure>
-	<figure style="width: 100px; height: 100px; float: right;">
+	<figure style="width: 100px; min-height: 100px; float: right;">
 		<img alt="Imagem demonstração" title="Demonstração de Front-End" src="./images/image2.png" />
 	</figure>
 	
