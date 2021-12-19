@@ -1,7 +1,7 @@
 <h1> HTML-JS-vanilla-Simples-Calculadora </h1>
 
 <div>
-	![Alt text](./images/image1.png?raw=true "Optional Title")
+	![Alt text](./images/image1.png?raw=true)
 	
 	![ScreenShot](https://raw.github.com/robert-office/HTML-JS-vanilla-Simples-Calculadora/main/./images/image2.png")
 	
