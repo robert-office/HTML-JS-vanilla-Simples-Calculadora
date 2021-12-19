@@ -1,8 +1,8 @@
 <h1> HTML-JS-vanilla-Simples-Calculadora </h1>
 
 <div>
-	![image](./images/image1.png")
-	![image](./images/image2.png)
+	![image](https://raw.github.com/robert-office/HTML-JS-vanilla-Simples-Calculadora/main/./images/image1.png")
+	![image](https://raw.github.com/robert-office/HTML-JS-vanilla-Simples-Calculadora/main/./images/image2.png")
 	
 	<h4>Uma simples calculadora feita em HTML + JS Vanilla + CSS, apenas como demonstração para o meu portfólio de JS simples</h4>
 <div>
